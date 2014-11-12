@@ -19,9 +19,28 @@
     // Do any additional setup after loading the view.
 }
 
+
+#pragma mark - Custom methods
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)msg
+{
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+
+-(BOOL)isEmailValidation:(NSString *)strEmail
+{
+    NSLog(@"%@",strEmail);
+    NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
+    
+    if ([emailTest evaluateWithObject:strEmail] == NO)
+        return NO;
+    return YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AbstractViewController.h"
-@interface WA_LoginViewController: AbstractViewController
+@interface WA_LoginViewController: AbstractViewController<UITextFieldDelegate>
 
 
 @end
