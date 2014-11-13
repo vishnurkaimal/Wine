@@ -12,6 +12,9 @@
 #import "FontUtility.h"
 #import "Utility.h"
 #import "UserRepository.h"
+#import "WAFacebook.h"
+#import "UserRegistrationDTO.h"
+#import "UserLoginDTO.h"
 #define BG_frame
 @interface WA_LoginViewController (){
 
@@ -55,6 +58,23 @@
     }
     return YES;
 }
+-(FBLoginStatus)setfbLoginResponseParams:(FBGraphObject *)graphObject{
+    
+    UserLoginDTO *loginDto = [[UserLoginDTO alloc]init];
+    loginDto.email =  [graphObject objectForKey:@"email"];
+    loginDto.dateOfBirth = [graphObject objectForKey:@"birthday"];
+    if ((![loginDto.dateOfBirth isEqualToString:@"null"]) ||(loginDto.dateOfBirth !=nil)) {
+       NSDate* dob= [Utility convertStringToDate:loginDto.dateOfBirth];
+       NSInteger dateofBirth = [self ageFromBirthday:dob];
+        if(dateofBirth<21){
+            return FBLoginFailWithAge;
+        }
+    }
+    if(loginDto.email.length ==0){
+        return FBLoginFailWithoutEmail;
+    }
+    return FBLoginStatusSuccess;
+}
 
 #pragma mark - Button Actions
 -(IBAction)registrationButtonClicked:(id)sender{
@@ -78,8 +98,33 @@
 }
 -(IBAction)faceBookButtonClicked:(id)sender{
     
-    
-    
+    if ([Utility checkForInternetConnection]) {
+        WAFacebook *facebook = [WAFacebook share];
+        [facebook LoginFacebook:^(id blockVar){
+            id user = blockVar;
+            if(user!= nil){
+               FBGraphObject *objct = (FBGraphObject*)blockVar;
+               FBLoginStatus fbstatus= [self setfbLoginResponseParams:objct];
+                switch (fbstatus) {
+                    case FBLoginFailWithAge:
+                         [self showAlertWithTitle:@"Age!" message:@"Age should be atleast 21"];
+                        break;
+                    case FBLoginFailWithoutEmail:
+                        [self showAlertWithTitle:@"Email!" message:@"We are unable to connect with your Email"];
+                        break;
+                    case FBLoginStatusSuccess:
+                        [Utility setValueInUserDefaults:@"1" forKey:USEREXISTS];
+                         NSLog(@"SUCESSFULLY LOGIN With FB");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else{
+                [self showAlertWithTitle:@"Whoops!" message:@"No user found"];
+            }
+        }];
+    }
 }
 
 #pragma mark - UItextField Delegates

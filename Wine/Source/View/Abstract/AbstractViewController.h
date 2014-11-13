@@ -10,5 +10,6 @@
 
 @interface AbstractViewController : UIViewController
 -(BOOL)isEmailValidation:(NSString *)strEmail;
+- (NSInteger)ageFromBirthday:(NSDate *)birthdate;
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)msg;
 @end

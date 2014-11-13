@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserDTO.h"
+#import "UserRegistrationDTO.h"
 #import <CoreData/CoreData.h>
 @interface UserRepository : NSObject{
     
@@ -15,6 +15,6 @@
 }
 
 -(BOOL)isUserExists:(NSString *)emailText;
--(BOOL)saveUserDetails:(UserDTO *)userDto;
+-(BOOL)saveUserDetails:(UserRegistrationDTO *)userDto;
 -(NSManagedObjectContext *)managedObjectContext;
 @end

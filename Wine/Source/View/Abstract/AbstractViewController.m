@@ -38,6 +38,15 @@
         return NO;
     return YES;
 }
+- (NSInteger)ageFromBirthday:(NSDate *)birthdate {
+    NSDate *today = [NSDate date];
+    NSDateComponents *ageComponents = [[NSCalendar currentCalendar]
+                                       components:NSYearCalendarUnit
+                                       fromDate:birthdate
+                                       toDate:today
+                                       options:0];
+    return ageComponents.year;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -45,9 +45,13 @@
 		04620F321A1258AC00267EC2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F311A1258AC00267EC2 /* Utility.m */; };
 		04620F381A1267E200267EC2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04620F371A1267E200267EC2 /* CoreData.framework */; };
 		04620F3B1A1268D500267EC2 /* Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04620F391A1268D500267EC2 /* Wine.xcdatamodeld */; };
-		04620F411A126A7500267EC2 /* UserDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F401A126A7500267EC2 /* UserDTO.m */; };
+		04620F411A126A7500267EC2 /* UserRegistrationDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F401A126A7500267EC2 /* UserRegistrationDTO.m */; };
 		04620F441A126AB300267EC2 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F431A126AB300267EC2 /* UserRepository.m */; };
 		04620F481A126AEA00267EC2 /* UserTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F471A126AEA00267EC2 /* UserTable.m */; };
+		04B335D81A148DCC0097B5DC /* UserLoginDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B335D71A148DCC0097B5DC /* UserLoginDTO.m */; };
+		04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */; };
+		04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABD91A13B5790094DF38 /* WAFacebook.m */; };
+		04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABDD1A13B8750094DF38 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,12 +114,19 @@
 		04620F311A1258AC00267EC2 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		04620F371A1267E200267EC2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		04620F3A1A1268D500267EC2 /* Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wine.xcdatamodel; sourceTree = "<group>"; };
-		04620F3F1A126A7500267EC2 /* UserDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDTO.h; sourceTree = "<group>"; };
-		04620F401A126A7500267EC2 /* UserDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDTO.m; sourceTree = "<group>"; };
+		04620F3F1A126A7500267EC2 /* UserRegistrationDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistrationDTO.h; sourceTree = "<group>"; };
+		04620F401A126A7500267EC2 /* UserRegistrationDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistrationDTO.m; sourceTree = "<group>"; };
 		04620F421A126AB300267EC2 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepository.h; sourceTree = "<group>"; };
 		04620F431A126AB300267EC2 /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepository.m; sourceTree = "<group>"; };
 		04620F461A126AEA00267EC2 /* UserTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTable.h; sourceTree = "<group>"; };
 		04620F471A126AEA00267EC2 /* UserTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTable.m; sourceTree = "<group>"; };
+		04B335D61A148DCC0097B5DC /* UserLoginDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginDTO.h; sourceTree = "<group>"; };
+		04B335D71A148DCC0097B5DC /* UserLoginDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginDTO.m; sourceTree = "<group>"; };
+		04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		04BAABD81A13B5790094DF38 /* WAFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAFacebook.h; sourceTree = "<group>"; };
+		04BAABD91A13B5790094DF38 /* WAFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAFacebook.m; sourceTree = "<group>"; };
+		04BAABDC1A13B8750094DF38 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04BAABDD1A13B8750094DF38 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04620F381A1267E200267EC2 /* CoreData.framework in Frameworks */,
+				04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +152,7 @@
 		04620E971A11E3A900267EC2 = {
 			isa = PBXGroup;
 			children = (
+				04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */,
 				04620F371A1267E200267EC2 /* CoreData.framework */,
 				04620EA21A11E3A900267EC2 /* Wine */,
 				04620EBC1A11E3A900267EC2 /* WineTests */,
@@ -198,6 +211,8 @@
 		04620EC91A11E47600267EC2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				04BAABDB1A13B8750094DF38 /* Reachability */,
+				04BAABD71A13B5700094DF38 /* ExternalLib */,
 				04620F3C1A126A6500267EC2 /* Data */,
 				04620F331A1266A700267EC2 /* CoreData */,
 				04620F2F1A12586F00267EC2 /* Utility */,
@@ -324,8 +339,8 @@
 		04620F3C1A126A6500267EC2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				04620F451A126ACA00267EC2 /* Table */,
 				04620F3D1A126A6500267EC2 /* DTO */,
+				04620F451A126ACA00267EC2 /* Table */,
 				04620F3E1A126A6500267EC2 /* Repository */,
 			);
 			path = Data;
@@ -334,8 +349,10 @@
 		04620F3D1A126A6500267EC2 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				04620F3F1A126A7500267EC2 /* UserDTO.h */,
-				04620F401A126A7500267EC2 /* UserDTO.m */,
+				04620F3F1A126A7500267EC2 /* UserRegistrationDTO.h */,
+				04620F401A126A7500267EC2 /* UserRegistrationDTO.m */,
+				04B335D61A148DCC0097B5DC /* UserLoginDTO.h */,
+				04B335D71A148DCC0097B5DC /* UserLoginDTO.m */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -356,6 +373,24 @@
 				04620F471A126AEA00267EC2 /* UserTable.m */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		04BAABD71A13B5700094DF38 /* ExternalLib */ = {
+			isa = PBXGroup;
+			children = (
+				04BAABD81A13B5790094DF38 /* WAFacebook.h */,
+				04BAABD91A13B5790094DF38 /* WAFacebook.m */,
+			);
+			path = ExternalLib;
+			sourceTree = "<group>";
+		};
+		04BAABDB1A13B8750094DF38 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				04BAABDC1A13B8750094DF38 /* Reachability.h */,
+				04BAABDD1A13B8750094DF38 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +456,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 04620E971A11E3A900267EC2;
 			productRefGroup = 04620EA11A11E3A900267EC2 /* Products */;
@@ -483,11 +519,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */,
 				04620F021A1205A200267EC2 /* AppDelegate.m in Sources */,
 				04620F481A126AEA00267EC2 /* UserTable.m in Sources */,
 				04620EA61A11E3A900267EC2 /* main.m in Sources */,
-				04620F411A126A7500267EC2 /* UserDTO.m in Sources */,
+				04620F411A126A7500267EC2 /* UserRegistrationDTO.m in Sources */,
 				04620F011A1205A200267EC2 /* AbstractViewController.m in Sources */,
+				04B335D81A148DCC0097B5DC /* UserLoginDTO.m in Sources */,
+				04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */,
 				04620F031A1205A200267EC2 /* WA_LoginViewController.m in Sources */,
 				04620F3B1A1268D500267EC2 /* Wine.xcdatamodeld in Sources */,
 				04620F321A1258AC00267EC2 /* Utility.m in Sources */,
@@ -616,6 +655,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sreekumar A (8287E68JHN)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Wine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -629,6 +674,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sreekumar A (8287E68JHN)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Wine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

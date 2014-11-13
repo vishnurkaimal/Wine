@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Utility.h"
 #import <CoreData/CoreData.h>
+#import <FacebookSDK/FacebookSDK.h>
 //#import "WA_LoginViewController.h"
 @interface AppDelegate (){
     
@@ -48,12 +49,21 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:..
     [self saveContext];
 }
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
+
 - (void)saveContext
 {
     NSError *error = nil;

@@ -9,7 +9,7 @@
 #import "WA_RegistrationViewController.h"
 #import "Utility.h"
 #import "Constant.h"
-#import "UserDTO.h"
+#import "UserRegistrationDTO.h"
 #import "UserRepository.h"
 @interface WA_RegistrationViewController (){
     
@@ -99,7 +99,7 @@
  if([self validateAllTextField]){
         [self.view endEditing:YES];
         UserRepository *usrRepository = [[UserRepository alloc]init];
-        UserDTO *usrDTO = [[UserDTO alloc]init];
+        UserRegistrationDTO *usrDTO = [[UserRegistrationDTO alloc]init];
         usrDTO.email = [Utility trimTextField:_emailField.text] ;
         usrDTO.password =[Utility trimTextField:_passwordField.text];
         usrDTO.age = [NSString stringWithFormat:@"%i",_age];
@@ -179,15 +179,7 @@
 
 }
 
-- (NSInteger)ageFromBirthday:(NSDate *)birthdate {
-    NSDate *today = [NSDate date];
-    NSDateComponents *ageComponents = [[NSCalendar currentCalendar]
-                                       components:NSYearCalendarUnit
-                                       fromDate:birthdate
-                                       toDate:today
-                                       options:0];
-    return ageComponents.year;
-}
+
 
 #pragma mark - Memoy warning
 - (void)didReceiveMemoryWarning {

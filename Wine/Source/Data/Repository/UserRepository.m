@@ -23,7 +23,7 @@
     return context;
 }
 
--(BOOL)saveUserDetails:(UserDTO *)userDto{
+-(BOOL)saveUserDetails:(UserRegistrationDTO *)userDto{
     NSManagedObjectContext *context = [self managedObjectContext];
     if([self isUserExists:userDto.email]){
         return NO;

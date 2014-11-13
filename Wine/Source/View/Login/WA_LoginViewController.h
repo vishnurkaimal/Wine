@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AbstractViewController.h"
+typedef enum FBLoginStatus : NSInteger FBLoginStatus;
+enum FBLoginStatus : NSInteger {
+    FBLoginFailWithAge,
+    FBLoginFailWithoutEmail,
+    FBLoginFailWithError,
+    FBLoginStatusSuccess
+};
 @interface WA_LoginViewController: AbstractViewController<UITextFieldDelegate>
 
 

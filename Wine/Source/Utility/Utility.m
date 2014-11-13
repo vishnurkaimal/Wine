@@ -8,6 +8,7 @@
 
 #import "Utility.h"
 #import "Constant.h"
+#import "Reachability.h"
 #import <UIKit/UIKit.h>
 @implementation Utility
 
@@ -19,6 +20,13 @@
         userStatus = YES;
     }
     return userStatus;
+}
++(BOOL) stringIsNotEmpty:(NSString *)string{
+    BOOL status =  NO;
+    if((string.length>0 && string!=nil))
+        status =  YES;
+    return status;
+    
 }
 
 +(NSString *)trimTextField:(NSString*)textString{
@@ -44,6 +52,14 @@
     return startDateString;
 }
 
++(NSDate *)convertStringToDate:(NSString *)dateString{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/yy"];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    return date;
+}
 +(void)setValueInUserDefaults:(id)value forKey:(NSString *)key{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -56,7 +72,19 @@
     return [[NSUserDefaults standardUserDefaults] valueForKey:key];
     
 }
-
++(BOOL)checkForInternetConnection
+{
+    BOOL retVal = FALSE;
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    if (internetStatus != NotReachable) {
+        retVal = TRUE;
+    }
+    else {
+        retVal = FALSE;
+    }
+    return retVal;
+}
 #pragma mark - Application's Documents directory
 
 // Returns the URL to the application's Documents directory.
