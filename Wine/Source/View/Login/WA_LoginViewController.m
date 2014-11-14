@@ -15,6 +15,7 @@
 #import "WAFacebook.h"
 #import "UserRegistrationDTO.h"
 #import "UserLoginDTO.h"
+#import "WA_WineListViewController.h"
 #define BG_frame
 @interface WA_LoginViewController (){
 
@@ -38,8 +39,14 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    if([Utility isUserExits]){
+        [self navigateToWineListView];
+    }
+    else{
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:YES];
+    }
 }
 #pragma mark - Custom Methods
 -(BOOL)validateAllTextField{
@@ -75,6 +82,11 @@
     }
     return FBLoginStatusSuccess;
 }
+-(void)navigateToWineListView{
+    
+    WA_WineListViewController *wineListView = (WA_WineListViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WA_WineListViewController"];
+    [self.navigationController pushViewController:wineListView animated:YES];
+}
 
 #pragma mark - Button Actions
 -(IBAction)registrationButtonClicked:(id)sender{
@@ -89,6 +101,7 @@
         if([userRepo isUserExists:[Utility trimTextField:_emailField.text]]){
             [Utility setValueInUserDefaults:@"1" forKey:USEREXISTS];
             NSLog(@"SUCESSFULLY LOGIN");
+            [self navigateToWineListView];
         }
         else{
             [self showAlertWithTitle:@"Whoops!" message:@"Mismatch in email and password"];
@@ -107,14 +120,15 @@
                FBLoginStatus fbstatus= [self setfbLoginResponseParams:objct];
                 switch (fbstatus) {
                     case FBLoginFailWithAge:
-                         [self showAlertWithTitle:@"Age!" message:@"Age should be atleast 21"];
+                         [self showAlertWithTitle:@"Age!"message:@"Age should be atleast 21"];
                         break;
                     case FBLoginFailWithoutEmail:
-                        [self showAlertWithTitle:@"Email!" message:@"We are unable to connect with your Email"];
+                        [self showAlertWithTitle:@"Email!"message:@"We are unable to connect with your Email"];
                         break;
                     case FBLoginStatusSuccess:
                         [Utility setValueInUserDefaults:@"1" forKey:USEREXISTS];
                          NSLog(@"SUCESSFULLY LOGIN With FB");
+                         [self navigateToWineListView];
                         break;
                     default:
                         break;

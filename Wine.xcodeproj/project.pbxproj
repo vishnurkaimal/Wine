@@ -49,6 +49,13 @@
 		04620F441A126AB300267EC2 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F431A126AB300267EC2 /* UserRepository.m */; };
 		04620F481A126AEA00267EC2 /* UserTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620F471A126AEA00267EC2 /* UserTable.m */; };
 		04B335D81A148DCC0097B5DC /* UserLoginDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B335D71A148DCC0097B5DC /* UserLoginDTO.m */; };
+		04B335E21A1501650097B5DC /* WA_WineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B335E11A1501650097B5DC /* WA_WineListViewController.m */; };
+		04B734D31A15B30E00155E04 /* category1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B734CD1A15B30E00155E04 /* category1.png */; };
+		04B734D41A15B30E00155E04 /* category1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B734CE1A15B30E00155E04 /* category1@2x.png */; };
+		04B734D51A15B30E00155E04 /* category2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B734CF1A15B30E00155E04 /* category2.png */; };
+		04B734D61A15B30E00155E04 /* category2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B734D01A15B30E00155E04 /* category2@2x.png */; };
+		04B734D71A15B30E00155E04 /* category3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B734D11A15B30E00155E04 /* category3.png */; };
+		04B734D81A15B30E00155E04 /* category3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B734D21A15B30E00155E04 /* category3@2x.png */; };
 		04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */; };
 		04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABD91A13B5790094DF38 /* WAFacebook.m */; };
 		04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABDD1A13B8750094DF38 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -122,6 +129,14 @@
 		04620F471A126AEA00267EC2 /* UserTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTable.m; sourceTree = "<group>"; };
 		04B335D61A148DCC0097B5DC /* UserLoginDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginDTO.h; sourceTree = "<group>"; };
 		04B335D71A148DCC0097B5DC /* UserLoginDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginDTO.m; sourceTree = "<group>"; };
+		04B335E01A1501650097B5DC /* WA_WineListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WA_WineListViewController.h; sourceTree = "<group>"; };
+		04B335E11A1501650097B5DC /* WA_WineListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WA_WineListViewController.m; sourceTree = "<group>"; };
+		04B734CD1A15B30E00155E04 /* category1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category1.png; sourceTree = "<group>"; };
+		04B734CE1A15B30E00155E04 /* category1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "category1@2x.png"; sourceTree = "<group>"; };
+		04B734CF1A15B30E00155E04 /* category2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category2.png; sourceTree = "<group>"; };
+		04B734D01A15B30E00155E04 /* category2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "category2@2x.png"; sourceTree = "<group>"; };
+		04B734D11A15B30E00155E04 /* category3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category3.png; sourceTree = "<group>"; };
+		04B734D21A15B30E00155E04 /* category3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "category3@2x.png"; sourceTree = "<group>"; };
 		04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		04BAABD81A13B5790094DF38 /* WAFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAFacebook.h; sourceTree = "<group>"; };
 		04BAABD91A13B5790094DF38 /* WAFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAFacebook.m; sourceTree = "<group>"; };
@@ -226,6 +241,7 @@
 		04620ED91A11EC1F00267EC2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04B734CC1A15B30200155E04 /* Wine images */,
 				04620F1C1A121CF900267EC2 /* facebook-login-button.png */,
 				04620F1D1A121CF900267EC2 /* facebook-login-button@2x.png */,
 				04620F1E1A121CF900267EC2 /* facebook-login-button@3x.png */,
@@ -275,6 +291,7 @@
 		04620EF61A1205A200267EC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B335DF1A15014F0097B5DC /* WineList */,
 				04620EFA1A1205A200267EC2 /* Appdelegate */,
 				04620EF71A1205A200267EC2 /* Abstract */,
 				04620EFD1A1205A200267EC2 /* Login */,
@@ -373,6 +390,28 @@
 				04620F471A126AEA00267EC2 /* UserTable.m */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		04B335DF1A15014F0097B5DC /* WineList */ = {
+			isa = PBXGroup;
+			children = (
+				04B335E01A1501650097B5DC /* WA_WineListViewController.h */,
+				04B335E11A1501650097B5DC /* WA_WineListViewController.m */,
+			);
+			path = WineList;
+			sourceTree = "<group>";
+		};
+		04B734CC1A15B30200155E04 /* Wine images */ = {
+			isa = PBXGroup;
+			children = (
+				04B734CD1A15B30E00155E04 /* category1.png */,
+				04B734CE1A15B30E00155E04 /* category1@2x.png */,
+				04B734CF1A15B30E00155E04 /* category2.png */,
+				04B734D01A15B30E00155E04 /* category2@2x.png */,
+				04B734D11A15B30E00155E04 /* category3.png */,
+				04B734D21A15B30E00155E04 /* category3@2x.png */,
+			);
+			path = "Wine images";
 			sourceTree = "<group>";
 		};
 		04BAABD71A13B5700094DF38 /* ExternalLib */ = {
@@ -474,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B734D41A15B30E00155E04 /* category1@2x.png in Resources */,
 				04620F0C1A12139600267EC2 /* login_field.png in Resources */,
 				04620F0D1A12139600267EC2 /* login_field@2x.png in Resources */,
 				04620F191A1215DB00267EC2 /* Login_password.png in Resources */,
@@ -488,10 +528,13 @@
 				04620F211A121CF900267EC2 /* facebook-login-button@3x.png in Resources */,
 				04620EE71A11EC1F00267EC2 /* Default.png in Resources */,
 				04620F1B1A1215DB00267EC2 /* Login_password@3x.png in Resources */,
+				04B734D71A15B30E00155E04 /* category3.png in Resources */,
 				04620F081A12081200267EC2 /* Login_transparent_bg@2x.png in Resources */,
 				04620EEC1A11EC1F00267EC2 /* Icon@2x.png in Resources */,
 				04620EE51A11EC1F00267EC2 /* Default-667h@2x.png in Resources */,
 				04620EF01A11F69D00267EC2 /* Main.storyboard in Resources */,
+				04B734D31A15B30E00155E04 /* category1.png in Resources */,
+				04B734D51A15B30E00155E04 /* category2.png in Resources */,
 				04620EE61A11EC1F00267EC2 /* Default-736h@3x.png in Resources */,
 				04620F131A12150500267EC2 /* Login_user_name.png in Resources */,
 				04620F091A12081200267EC2 /* Login_transparent_bg@3x.png in Resources */,
@@ -500,6 +543,8 @@
 				04620F0F1A1214DF00267EC2 /* login_field@3x.png in Resources */,
 				04620F1A1A1215DB00267EC2 /* Login_password@2x.png in Resources */,
 				04620EED1A11EC1F00267EC2 /* Icon@3x.png in Resources */,
+				04B734D81A15B30E00155E04 /* category3@2x.png in Resources */,
+				04B734D61A15B30E00155E04 /* category2@2x.png in Resources */,
 				04620F201A121CF900267EC2 /* facebook-login-button@2x.png in Resources */,
 				04620EE41A11EC1F00267EC2 /* Default-568h@2x.png in Resources */,
 			);
@@ -530,6 +575,7 @@
 				04620F031A1205A200267EC2 /* WA_LoginViewController.m in Sources */,
 				04620F3B1A1268D500267EC2 /* Wine.xcdatamodeld in Sources */,
 				04620F321A1258AC00267EC2 /* Utility.m in Sources */,
+				04B335E21A1501650097B5DC /* WA_WineListViewController.m in Sources */,
 				04620F001A1205A200267EC2 /* FontUtility.m in Sources */,
 				04620F441A126AB300267EC2 /* UserRepository.m in Sources */,
 				04620F251A12304F00267EC2 /* WA_RegistrationViewController.m in Sources */,

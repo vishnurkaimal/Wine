@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Utility : NSObject
++(BOOL)isUserExits;
 +(NSString *)trimTextField:(NSString*)textString;
 +(BOOL)currentVersionGreaterOrEqualtoIOS7;
 +(NSString *)convertDateToString:(NSDate *)date;
