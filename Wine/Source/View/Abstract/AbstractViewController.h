@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProgressHUDView.h"
+@interface AbstractViewController : UIViewController{
+    ProgressHUDView *progressIndicator;
+}
 
-@interface AbstractViewController : UIViewController
 
 -(void)showSignOutButton;
 -(void)showNavBar:(BOOL)isNavBar;
+- (void) hideModalProgressIndicator;
 -(BOOL)isEmailValidation:(NSString *)strEmail;
 - (NSInteger)ageFromBirthday:(NSDate *)birthdate;
+- (void) showProgressIndicator:(NSString *)text;
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)msg;
 @end

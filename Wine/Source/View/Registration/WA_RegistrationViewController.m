@@ -11,8 +11,11 @@
 #import "Constant.h"
 #import "UserRegistrationDTO.h"
 #import "UserRepository.h"
+#import "ProgressHUDView.h"
+#import "WA_WineListViewController.h"
+
 @interface WA_RegistrationViewController (){
-    
+    UIView *timeBackgroundView;
     
 }
 
@@ -79,18 +82,32 @@
     }
     return YES;
 }
+-(void)navigateToWineListView{
+    
+    WA_WineListViewController *wineListView = (WA_WineListViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WA_WineListViewController"];
+    [self.navigationController pushViewController:wineListView animated:YES];
+}
 
-
+#pragma mark - Button Actions
 #pragma mark - Button Actions
 -(void)doneButtonPressed:(id)sender{
     NSDate *selectDate = self.pickerView.date;
     _age = [self ageFromBirthday:selectDate];
     _ageField.text = [Utility convertDateToString:selectDate];
-     [self.pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+    if ([Utility currentVersionGreaterOrEqualtoIOS8]) {
+        [timeBackgroundView removeFromSuperview];
+    }
+    else
+        [self.pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+    
 }
 
 -(void)cancelButtonPressed:(id)sender{
-    [self.pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+    if ([Utility currentVersionGreaterOrEqualtoIOS8]) {
+        [timeBackgroundView removeFromSuperview];
+    }
+    else
+        [self.pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
 }
 #pragma mark - UIbutton Actions
 
@@ -98,21 +115,38 @@
     
  if([self validateAllTextField]){
         [self.view endEditing:YES];
+     if([Utility checkForInternetConnection]){
+         [self showProgressIndicator:@"Loading..."];
         UserRepository *usrRepository = [[UserRepository alloc]init];
         UserRegistrationDTO *usrDTO = [[UserRegistrationDTO alloc]init];
         usrDTO.email = [Utility trimTextField:_emailField.text] ;
         usrDTO.password =[Utility trimTextField:_passwordField.text];
         usrDTO.age = [NSString stringWithFormat:@"%i",_age];
-        if(![usrRepository saveUserDetails:usrDTO]){
-           [self showAlertWithTitle:@"Whoops!" message:@"User Already Exists"];
-            return;
-        }
-        else{
-            NSLog(@"Successfully Registerd");;
-        }
+        [usrRepository registerUser:usrDTO WithResponseBlock:^(RegStatus regStatus , NSError *error){
+         [self hideModalProgressIndicator];
+            switch (regStatus) {
+                case RegStatusSuccess:
+                    NSLog(@"SUCESSFULLY REGISTERD");
+                    [self navigateToWineListView];
+                    break;
+                case RegStatusExists:
+                    [self showAlertWithTitle:@"Whoops!" message:@"User already exists"];
+                    break;
+                case RegStatusError:
+                    [self showAlertWithTitle:@"Whoops!" message:@"Unspecified error occured,please try again later!"];
+                    break;
+                default:
+                    break;
+            }
+            
+        }];
     }
-}
-
+    else{
+        [self showAlertWithTitle:@"Whoops!" message:@"Please check your internt connection"];
+        return;
+      }
+    }
+ }
 #pragma mark - UItextfield delegates
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
@@ -170,10 +204,23 @@
          
          [pickerToolbar setItems:barItems animated:YES];
          
-         [_pickerViewPopup addSubview:pickerToolbar];
-         [_pickerViewPopup addSubview:_pickerView];
-         [_pickerViewPopup showInView:self.view];
-         [_pickerViewPopup setBounds:CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.height)];
+         if ([Utility currentVersionGreaterOrEqualtoIOS8]) {
+             timeBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height -200, 320, 246)];
+             [timeBackgroundView setBackgroundColor:[UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0]];
+             
+             [timeBackgroundView addSubview:pickerToolbar];
+             [timeBackgroundView addSubview:_pickerView];
+             
+             [self.view addSubview:timeBackgroundView];
+         }
+         else {
+             [_pickerViewPopup addSubview:pickerToolbar];
+             [_pickerViewPopup addSubview:_pickerView];
+             [_pickerViewPopup showInView:self.view];
+             [_pickerViewPopup setBounds:CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.height)];
+             [_pickerViewPopup setBounds:CGRectMake(0,0,320, 464)];
+             
+         }
     
      }
 

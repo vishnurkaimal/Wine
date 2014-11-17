@@ -46,6 +46,13 @@
     else
         return NO;
 }
++(BOOL)currentVersionGreaterOrEqualtoIOS8{
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= IOS8)
+        return YES;
+    else
+        return NO;
+}
 
 +(NSString *)convertDateToString:(NSDate *)date{
     

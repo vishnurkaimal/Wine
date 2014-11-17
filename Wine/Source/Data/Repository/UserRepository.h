@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "UserRegistrationDTO.h"
+#import "UserLoginDTO.h"
 #import <CoreData/CoreData.h>
+
+typedef enum RegStatus : NSInteger RegStatus;
+enum RegStatus : NSInteger {
+    RegStatusSuccess,
+    RegStatusExists,
+    RegStatusNotExists,
+    RegStatusError
+};
+
 @interface UserRepository : NSObject{
     
     
 }
-
--(BOOL)isUserExists:(NSString *)emailText;
--(BOOL)saveUserDetails:(UserRegistrationDTO *)userDto;
--(NSManagedObjectContext *)managedObjectContext;
+-(void)loginUser:(UserLoginDTO *)regDTO WithResponseBlock:(void (^)(RegStatus ,NSError *))responseValue;
+-(void)registerUser:(UserRegistrationDTO *)regDTO WithResponseBlock:(void (^)(RegStatus ,NSError *))responseValue;
 @end

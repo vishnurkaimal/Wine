@@ -11,8 +11,9 @@
 @interface Utility : NSObject
 +(BOOL)isUserExits;
 +(void)signOutUser;
-+(NSString *)trimTextField:(NSString*)textString;
 +(BOOL)currentVersionGreaterOrEqualtoIOS7;
++(BOOL)currentVersionGreaterOrEqualtoIOS8;
++(NSString *)trimTextField:(NSString*)textString;
 +(NSString *)convertDateToString:(NSDate *)date;
 +(NSDate *)convertStringToDate:(NSString *)dateString;
 +(NSURL *)applicationDocumentsDirectory;

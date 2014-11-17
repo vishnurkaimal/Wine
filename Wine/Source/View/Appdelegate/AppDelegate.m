@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 #import "Utility.h"
+#import <Parse/Parse.h>
 #import <CoreData/CoreData.h>
 #import <FacebookSDK/FacebookSDK.h>
+
 //#import "WA_LoginViewController.h"
 @interface AppDelegate (){
     
@@ -30,6 +32,7 @@
 //    WA_LoginViewController *loginViewController = [[WA_LoginViewController alloc]init];
 //    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
 //    self.window.rootViewController = navController;
+    [self setParseAPIKey];
     return YES;
 }
 
@@ -77,6 +80,14 @@
         }
     }
 }
+#pragma mark - Custom Methods
+-(void)setParseAPIKey{
+    
+    [Parse setApplicationId:@"JtHLAwpl2VNXON4vI2wnT9RpNNBiWqHY9KQ2VNJx"
+                  clientKey:@"zetv1obEY9GM0BYcOxvOOyymaKkDaLVo81E17MPA"];
+}
+
+
 
 #pragma mark - Core Data stack
 

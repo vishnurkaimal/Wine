@@ -16,6 +16,8 @@
 #import "UserRegistrationDTO.h"
 #import "UserLoginDTO.h"
 #import "WA_WineListViewController.h"
+#import "ProgressHUDView.h"
+
 #define BG_frame
 @interface WA_LoginViewController (){
 
@@ -97,11 +99,31 @@
 -(IBAction)loginButtonCliked:(id)sender{
     [self.view endEditing:YES];
     if([self validateAllTextField]){
-        UserRepository *userRepo = [[UserRepository alloc]init];
-        if([userRepo isUserExists:[Utility trimTextField:_emailField.text]]){
-            [Utility setValueInUserDefaults:@"1" forKey:USEREXISTS];
-            NSLog(@"SUCESSFULLY LOGIN");
-            [self navigateToWineListView];
+         [self.view endEditing:YES];
+        if([Utility checkForInternetConnection]){
+          [self showProgressIndicator:@"Loading..."];
+          UserLoginDTO *loginDto = [[UserLoginDTO alloc]init];
+          loginDto.email = _emailField.text;
+          loginDto.password = _passwordField.text;
+          UserRepository *userRepo = [[UserRepository alloc]init];
+          [userRepo loginUser:loginDto WithResponseBlock:^(RegStatus regStatus , NSError *error){
+          [self hideModalProgressIndicator];
+              switch (regStatus) {
+                  case RegStatusSuccess:
+                       NSLog(@"SUCESSFULLY LOGINED");
+                      [Utility setValueInUserDefaults:@"1" forKey:USEREXISTS];
+                      [self navigateToWineListView];
+                      break;
+                  case RegStatusNotExists:
+                      [self showAlertWithTitle:@"Whoops!" message:@"User not exists, please register first"];
+                      break;
+                  case RegStatusError:
+                      [self showAlertWithTitle:@"Whoops!" message:@"Unspecified error occured,please try again later!"];
+                      break;
+                  default:
+                      break;
+              }
+           }];
         }
         else{
             [self showAlertWithTitle:@"Whoops!" message:@"Mismatch in email and password"];

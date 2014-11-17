@@ -8,60 +8,71 @@
 
 #import "UserRepository.h"
 #import "UserTable.h"
-
+#import "Utility.h"
+#import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
 #define ENTITY_USER @"User"
 @implementation UserRepository
 
--(NSManagedObjectContext *)managedObjectContext {
-    
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
+
+-(void)isUserExists:(NSString *)emailText WithResponseBlock:(void (^)(RegStatus))responseValue{
+
+   PFQuery *query = [PFQuery queryWithClassName:@"User_Registration"];
+   [query whereKey:@"email" equalTo:emailText];
+   query.cachePolicy = kPFCachePolicyNetworkOnly;
+    if ([query countObjects] == 0) {
+        responseValue (RegStatusNotExists);
     }
-    return context;
+    else {
+         responseValue (RegStatusExists);
+    }
 }
 
--(BOOL)saveUserDetails:(UserRegistrationDTO *)userDto{
-    NSManagedObjectContext *context = [self managedObjectContext];
-    if([self isUserExists:userDto.email]){
-        return NO;
-    }
-    else{
-        NSError *error = nil;
-        UserTable *userObj = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_USER inManagedObjectContext:context];
-        [userObj setValue:userDto.email forKey:@"email"];
-        [userObj setValue:userDto.password forKey:@"password"];
-        [userObj setValue:userDto.age forKey:@"age"];
-        if (![context save:&error]) {
-            return NO;
+-(void)registerUser:(UserRegistrationDTO *)regDTO WithResponseBlock:(void (^)(RegStatus ,NSError *))responseValue{
+    
+    [self isUserExists:regDTO.email WithResponseBlock: ^(RegStatus  regStatus){
+        if(regStatus == RegStatusExists){
+            responseValue(regStatus,nil);
         }
         else{
-            return YES;
+            PFObject *obj = [PFObject objectWithClassName:@"User_Registration"];
+            [obj setObject:regDTO.email forKey:@"email"];
+            [obj setObject:regDTO.password forKey:@"password"];
+            [obj setObject:regDTO.age forKey:@"age"];
+            [obj setObject:[Utility convertDateToString:[NSDate date]] forKey:@"register_date"];
+            [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(error){
+                responseValue(RegStatusError,error);
+             }
+            else{
+                responseValue(RegStatusSuccess,error);
+            }
+            }];
         }
-    }
-    return YES;
+    }];
 }
 
--(BOOL)isUserExists:(NSString *)emailText{
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSFetchRequest *request= [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:ENTITY_USER inManagedObjectContext:context];
-    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"email==%@",emailText];
-    [request setEntity:entity];
-    [request setPredicate:predicate];
-    NSError *error = nil;
-    NSArray *array = [context executeFetchRequest:request error:&error];
-    if (array.count != 0) {
-        NSUInteger count = [array count]; // may be 0 if the object has been deleted.
-        NSLog(@"Username may exist, %i",count);
-        return YES;
-    }
+-(void)loginUser:(UserLoginDTO *)loginDTO WithResponseBlock:(void (^)(RegStatus ,NSError *))responseValue{
     
-    else {
-        NSLog(@"Username does not exist.");
-        return NO;
-    }
+    [self isUserExists:loginDTO.email WithResponseBlock: ^(RegStatus  regStatus){
+        if(regStatus == RegStatusNotExists){
+            responseValue(regStatus,nil);
+        }
+        else{
+            PFObject *obj = [PFObject objectWithClassName:@"User_Login"];
+            [obj setObject:loginDTO.email forKey:@"email"];
+            [obj setObject:loginDTO.password forKey:@"password"];
+            [obj setObject:[Utility convertDateToString:[NSDate date]] forKey:@"login_date"];
+            [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if(error){
+                    responseValue(RegStatusError,error);
+                }
+                else{
+                    responseValue(RegStatusSuccess,error);
+                }
+            }];
+        }
+    }];
 }
+
 @end

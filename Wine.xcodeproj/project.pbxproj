@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415F43A1A19D63A0003F20F /* CartTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F4391A19D63A0003F20F /* CartTable.m */; };
+		0415F43F1A19EA320003F20F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F43E1A19EA320003F20F /* Parse.framework */; };
+		0415F4431A19EC9E0003F20F /* ProgressHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F4421A19EC9E0003F20F /* ProgressHUDView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0415F4461A1A0F650003F20F /* WineRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F4451A1A0F650003F20F /* WineRepository.m */; };
+		0415F4491A1A15E30003F20F /* WineListDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F4481A1A15E30003F20F /* WineListDTO.m */; };
+		0415F44B1A1A1E780003F20F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F44A1A1A1E780003F20F /* AudioToolbox.framework */; };
+		0415F44D1A1A21720003F20F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F44C1A1A21720003F20F /* CFNetwork.framework */; };
+		0415F44F1A1A21830003F20F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F44E1A1A21830003F20F /* SystemConfiguration.framework */; };
+		0415F4511A1A231A0003F20F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F4501A1A231A0003F20F /* QuartzCore.framework */; };
+		0415F4531A1A232E0003F20F /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F4521A1A232E0003F20F /* libz.1.1.3.dylib */; };
+		0415F4551A1A23850003F20F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0415F4541A1A23850003F20F /* MobileCoreServices.framework */; };
+		0415F45C1A1A274D0003F20F /* CartListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F4581A1A274D0003F20F /* CartListViewController.m */; };
+		0415F45D1A1A274D0003F20F /* WA_WinedetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F45B1A1A274D0003F20F /* WA_WinedetailsViewController.m */; };
+		0415F4601A1A27B70003F20F /* UserCartDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F45F1A1A27B70003F20F /* UserCartDTO.m */; };
+		0415F4631A1A29030003F20F /* UserCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415F4621A1A29030003F20F /* UserCart.m */; };
+		0415F4651A1A2E960003F20F /* DefaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 0415F4641A1A2E960003F20F /* DefaultImage.png */; };
 		04620EA61A11E3A900267EC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04620EA51A11E3A900267EC2 /* main.m */; };
 		04620EB11A11E3A900267EC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04620EB01A11E3A900267EC2 /* Images.xcassets */; };
 		04620EB41A11E3A900267EC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04620EB21A11E3A900267EC2 /* LaunchScreen.xib */; };
@@ -72,6 +88,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0415F4381A19D63A0003F20F /* CartTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTable.h; sourceTree = "<group>"; };
+		0415F4391A19D63A0003F20F /* CartTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTable.m; sourceTree = "<group>"; };
+		0415F43E1A19EA320003F20F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		0415F4411A19EC9E0003F20F /* ProgressHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUDView.h; sourceTree = "<group>"; };
+		0415F4421A19EC9E0003F20F /* ProgressHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUDView.m; sourceTree = "<group>"; };
+		0415F4441A1A0F650003F20F /* WineRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineRepository.h; sourceTree = "<group>"; };
+		0415F4451A1A0F650003F20F /* WineRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineRepository.m; sourceTree = "<group>"; };
+		0415F4471A1A15E30003F20F /* WineListDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineListDTO.h; sourceTree = "<group>"; };
+		0415F4481A1A15E30003F20F /* WineListDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineListDTO.m; sourceTree = "<group>"; };
+		0415F44A1A1A1E780003F20F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0415F44C1A1A21720003F20F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0415F44E1A1A21830003F20F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0415F4501A1A231A0003F20F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0415F4521A1A232E0003F20F /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		0415F4541A1A23850003F20F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0415F4571A1A274D0003F20F /* CartListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartListViewController.h; sourceTree = "<group>"; };
+		0415F4581A1A274D0003F20F /* CartListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartListViewController.m; sourceTree = "<group>"; };
+		0415F45A1A1A274D0003F20F /* WA_WinedetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WA_WinedetailsViewController.h; sourceTree = "<group>"; };
+		0415F45B1A1A274D0003F20F /* WA_WinedetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WA_WinedetailsViewController.m; sourceTree = "<group>"; };
+		0415F45E1A1A27B70003F20F /* UserCartDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCartDTO.h; sourceTree = "<group>"; };
+		0415F45F1A1A27B70003F20F /* UserCartDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCartDTO.m; sourceTree = "<group>"; };
+		0415F4611A1A29030003F20F /* UserCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCart.h; sourceTree = "<group>"; };
+		0415F4621A1A29030003F20F /* UserCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCart.m; sourceTree = "<group>"; };
+		0415F4641A1A2E960003F20F /* DefaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultImage.png; sourceTree = "<group>"; };
 		04620EA01A11E3A900267EC2 /* Wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04620EA41A11E3A900267EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04620EA51A11E3A900267EC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -149,7 +189,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415F4551A1A23850003F20F /* MobileCoreServices.framework in Frameworks */,
+				0415F4531A1A232E0003F20F /* libz.1.1.3.dylib in Frameworks */,
+				0415F4511A1A231A0003F20F /* QuartzCore.framework in Frameworks */,
+				0415F44F1A1A21830003F20F /* SystemConfiguration.framework in Frameworks */,
+				0415F44D1A1A21720003F20F /* CFNetwork.framework in Frameworks */,
+				0415F44B1A1A1E780003F20F /* AudioToolbox.framework in Frameworks */,
 				04620F381A1267E200267EC2 /* CoreData.framework in Frameworks */,
+				0415F43F1A19EA320003F20F /* Parse.framework in Frameworks */,
 				04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,9 +211,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0415F4401A19EC9E0003F20F /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0415F4411A19EC9E0003F20F /* ProgressHUDView.h */,
+				0415F4421A19EC9E0003F20F /* ProgressHUDView.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		0415F4561A1A274D0003F20F /* Cart list */ = {
+			isa = PBXGroup;
+			children = (
+				0415F4571A1A274D0003F20F /* CartListViewController.h */,
+				0415F4581A1A274D0003F20F /* CartListViewController.m */,
+			);
+			path = "Cart list";
+			sourceTree = "<group>";
+		};
+		0415F4591A1A274D0003F20F /* Wine details */ = {
+			isa = PBXGroup;
+			children = (
+				0415F45A1A1A274D0003F20F /* WA_WinedetailsViewController.h */,
+				0415F45B1A1A274D0003F20F /* WA_WinedetailsViewController.m */,
+			);
+			path = "Wine details";
+			sourceTree = "<group>";
+		};
 		04620E971A11E3A900267EC2 = {
 			isa = PBXGroup;
 			children = (
+				0415F4541A1A23850003F20F /* MobileCoreServices.framework */,
+				0415F4521A1A232E0003F20F /* libz.1.1.3.dylib */,
+				0415F4501A1A231A0003F20F /* QuartzCore.framework */,
+				0415F44E1A1A21830003F20F /* SystemConfiguration.framework */,
+				0415F44C1A1A21720003F20F /* CFNetwork.framework */,
+				0415F44A1A1A1E780003F20F /* AudioToolbox.framework */,
 				04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */,
 				04620F371A1267E200267EC2 /* CoreData.framework */,
 				04620EA21A11E3A900267EC2 /* Wine */,
@@ -241,6 +321,7 @@
 		04620ED91A11EC1F00267EC2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0415F4641A1A2E960003F20F /* DefaultImage.png */,
 				04B734CC1A15B30200155E04 /* Wine images */,
 				04620F1C1A121CF900267EC2 /* facebook-login-button.png */,
 				04620F1D1A121CF900267EC2 /* facebook-login-button@2x.png */,
@@ -291,6 +372,8 @@
 		04620EF61A1205A200267EC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0415F4561A1A274D0003F20F /* Cart list */,
+				0415F4591A1A274D0003F20F /* Wine details */,
 				04B335DF1A15014F0097B5DC /* WineList */,
 				04620EFA1A1205A200267EC2 /* Appdelegate */,
 				04620EF71A1205A200267EC2 /* Abstract */,
@@ -366,10 +449,14 @@
 		04620F3D1A126A6500267EC2 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				0415F45E1A1A27B70003F20F /* UserCartDTO.h */,
+				0415F45F1A1A27B70003F20F /* UserCartDTO.m */,
 				04620F3F1A126A7500267EC2 /* UserRegistrationDTO.h */,
 				04620F401A126A7500267EC2 /* UserRegistrationDTO.m */,
 				04B335D61A148DCC0097B5DC /* UserLoginDTO.h */,
 				04B335D71A148DCC0097B5DC /* UserLoginDTO.m */,
+				0415F4471A1A15E30003F20F /* WineListDTO.h */,
+				0415F4481A1A15E30003F20F /* WineListDTO.m */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -377,8 +464,12 @@
 		04620F3E1A126A6500267EC2 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				0415F4611A1A29030003F20F /* UserCart.h */,
+				0415F4621A1A29030003F20F /* UserCart.m */,
 				04620F421A126AB300267EC2 /* UserRepository.h */,
 				04620F431A126AB300267EC2 /* UserRepository.m */,
+				0415F4441A1A0F650003F20F /* WineRepository.h */,
+				0415F4451A1A0F650003F20F /* WineRepository.m */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -388,6 +479,8 @@
 			children = (
 				04620F461A126AEA00267EC2 /* UserTable.h */,
 				04620F471A126AEA00267EC2 /* UserTable.m */,
+				0415F4381A19D63A0003F20F /* CartTable.h */,
+				0415F4391A19D63A0003F20F /* CartTable.m */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -417,6 +510,8 @@
 		04BAABD71A13B5700094DF38 /* ExternalLib */ = {
 			isa = PBXGroup;
 			children = (
+				0415F4401A19EC9E0003F20F /* MBProgressHUD */,
+				0415F43E1A19EA320003F20F /* Parse.framework */,
 				04BAABD81A13B5790094DF38 /* WAFacebook.h */,
 				04BAABD91A13B5790094DF38 /* WAFacebook.m */,
 			);
@@ -521,6 +616,7 @@
 				04620EEA1A11EC1F00267EC2 /* Icon.png in Resources */,
 				04620F141A12150500267EC2 /* Login_user_name@2x.png in Resources */,
 				04620F071A12081200267EC2 /* Login_transparent_bg.png in Resources */,
+				0415F4651A1A2E960003F20F /* DefaultImage.png in Resources */,
 				04620EB41A11E3A900267EC2 /* LaunchScreen.xib in Resources */,
 				04620EE91A11EC1F00267EC2 /* Default@3x.png in Resources */,
 				04620F151A12150500267EC2 /* Login_user_name@3x.png in Resources */,
@@ -570,14 +666,22 @@
 				04620EA61A11E3A900267EC2 /* main.m in Sources */,
 				04620F411A126A7500267EC2 /* UserRegistrationDTO.m in Sources */,
 				04620F011A1205A200267EC2 /* AbstractViewController.m in Sources */,
+				0415F4491A1A15E30003F20F /* WineListDTO.m in Sources */,
 				04B335D81A148DCC0097B5DC /* UserLoginDTO.m in Sources */,
+				0415F45C1A1A274D0003F20F /* CartListViewController.m in Sources */,
 				04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */,
+				0415F4601A1A27B70003F20F /* UserCartDTO.m in Sources */,
+				0415F43A1A19D63A0003F20F /* CartTable.m in Sources */,
+				0415F4461A1A0F650003F20F /* WineRepository.m in Sources */,
 				04620F031A1205A200267EC2 /* WA_LoginViewController.m in Sources */,
+				0415F4431A19EC9E0003F20F /* ProgressHUDView.m in Sources */,
 				04620F3B1A1268D500267EC2 /* Wine.xcdatamodeld in Sources */,
 				04620F321A1258AC00267EC2 /* Utility.m in Sources */,
 				04B335E21A1501650097B5DC /* WA_WineListViewController.m in Sources */,
 				04620F001A1205A200267EC2 /* FontUtility.m in Sources */,
 				04620F441A126AB300267EC2 /* UserRepository.m in Sources */,
+				0415F45D1A1A274D0003F20F /* WA_WinedetailsViewController.m in Sources */,
+				0415F4631A1A29030003F20F /* UserCart.m in Sources */,
 				04620F251A12304F00267EC2 /* WA_RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +810,7 @@
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Wine/Source/ExternalLib",
 				);
 				INFOPLIST_FILE = Wine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -725,6 +830,7 @@
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Wine/Source/ExternalLib",
 				);
 				INFOPLIST_FILE = Wine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

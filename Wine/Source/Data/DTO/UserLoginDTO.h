@@ -10,5 +10,6 @@
 
 @interface UserLoginDTO : NSObject
 @property (nonatomic,retain)NSString *email;
+@property (nonatomic,retain)NSString *password;
 @property (nonatomic,retain)NSString *dateOfBirth;
 @end

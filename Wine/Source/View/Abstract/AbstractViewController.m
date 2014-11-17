@@ -68,6 +68,24 @@
                                        options:0];
     return ageComponents.year;
 }
+
+- (void) showProgressIndicator:(NSString *)text {
+    if (!progressIndicator) {
+        progressIndicator = [[ProgressHUDView alloc] initWithView:self.view];
+        progressIndicator.userInteractionEnabled = NO;
+        progressIndicator.labelText = text;
+        [self.view addSubview:progressIndicator];
+        [progressIndicator show:YES];
+    }
+    
+}
+
+- (void) hideModalProgressIndicator {
+    if(progressIndicator) {
+        [progressIndicator removeFromSuperview];
+        progressIndicator = nil;
+    }
+}
 #pragma mark - Button Action
 
 -(void)signOutUser{
