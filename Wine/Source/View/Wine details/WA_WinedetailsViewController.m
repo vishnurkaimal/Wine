@@ -7,11 +7,12 @@
 //
 
 #import "WA_WinedetailsViewController.h"
+#import "CartListViewController.h"
 #import "UserCartDTO.h"
 #import "UserCart.h"
 #import "Utility.h"
 #import "Constant.h"
-
+#import "WineRepository.h"
 @interface WA_WinedetailsViewController () {
     UIView *quantityListBackgroundView;
     NSMutableArray *quantityArray;
@@ -70,11 +71,11 @@
 -(void)setQuantityArray {
     if(self.wineListDTO.wineQtyRemains == 0){
         self.quantityTextField.hidden = YES;
-        self.quantityTextField.text = @"No quantity available now!";
+        self.quantityHeaderLabel.text = @"No quantity available now!";
     }
     else{
         self.quantityTextField.hidden = NO;
-        self.quantityTextField.text = @"Select quantity";
+        self.quantityHeaderLabel.text = @"Select quantity";
         quantityArray = [[NSMutableArray alloc]init];
          for (int i = 1; i <= self.wineListDTO.wineQtyRemains; i++) {
             [quantityArray addObject:[NSNumber numberWithInt:i]];
@@ -82,16 +83,26 @@
     }
 }
 -(void)showAddCartButton {
-    UIImage *cartImage = [UIImage imageNamed:@"cart_image.png"];
-    UIButton *addCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addCartButton addTarget:self action:@selector(addCartButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [addCartButton setImage:cartImage forState:UIControlStateNormal];
-    addCartButton.frame = CGRectMake(200.0, 0.0, 30, 30);
+    if( self.wineListDTO.wineQtyRemains != 0){
+     UIImage *cartImage = [UIImage imageNamed:@"cart_image.png"];
+     UIButton *addCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
+     [addCartButton addTarget:self action:@selector(addCartButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+     [addCartButton setImage:cartImage forState:UIControlStateNormal];
+     addCartButton.frame = CGRectMake(200.0, 0.0, 30, 30);
     
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:addCartButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
+    }
+    else{
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
-
+-(void)navigateToCartpage {
+    
+    CartListViewController *wineDetailsView = (CartListViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"CartListViewController"];
+    [self.navigationController pushViewController:wineDetailsView animated:YES];
+    
+}
 
 #pragma mark - Button Actions
 -(void)doneButtonPressed:(id)sender{
@@ -113,6 +124,7 @@
 }
 
 -(IBAction)addCartButtonClicked:(id)sender {
+    if([Utility trimTextField:self.quantityTextField.text].length >0){
     UserCart    *userCart = [[UserCart alloc]init];
     UserCartDTO *cartDto  = [[UserCartDTO alloc]init];
     cartDto.quantity      = [NSNumber numberWithInt:[_quantityTextField.text intValue]];
@@ -120,7 +132,14 @@
     cartDto.name          = self.wineListDTO.winename;
     cartDto.thumbImage    = self.wineListDTO.wineThumbImage;
     cartDto.wineDetailsImage = self.wineListDTO.wineDetailImage;
+    cartDto.wineId = [NSNumber numberWithInteger:self.wineListDTO.wineId];
+    NSInteger wineRemain =  self.wineListDTO.wineQtyRemains  - [cartDto.quantity integerValue];
+    cartDto.wineQtyRemains = [NSNumber numberWithInteger:wineRemain];
     [userCart saveUserDetails:cartDto];
+    WineRepository *wineRepo = [[WineRepository alloc]init];
+    [wineRepo updateQtyremains:cartDto.wineQtyRemains andId:cartDto.wineId];
+    [self navigateToCartpage];
+  }
 }
 
 #pragma mark - UItextfield delegates

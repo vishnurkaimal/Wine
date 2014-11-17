@@ -75,6 +75,7 @@
 		04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */; };
 		04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABD91A13B5790094DF38 /* WAFacebook.m */; };
 		04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABDD1A13B8750094DF38 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		322156BC1A1A76B00010C7CA /* WineTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 322156BB1A1A76B00010C7CA /* WineTable.m */; };
 		32F881FE1A1A446300D9B643 /* CartListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */; };
 		32F881FF1A1A446300D9B643 /* CartListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -184,6 +185,8 @@
 		04BAABD91A13B5790094DF38 /* WAFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAFacebook.m; sourceTree = "<group>"; };
 		04BAABDC1A13B8750094DF38 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		04BAABDD1A13B8750094DF38 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		322156BA1A1A76B00010C7CA /* WineTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineTable.h; sourceTree = "<group>"; };
+		322156BB1A1A76B00010C7CA /* WineTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineTable.m; sourceTree = "<group>"; };
 		32F881FB1A1A446300D9B643 /* CartListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartListTableViewCell.h; sourceTree = "<group>"; };
 		32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartListTableViewCell.m; sourceTree = "<group>"; };
 		32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartListTableViewCell.xib; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				04620F471A126AEA00267EC2 /* UserTable.m */,
 				0415F4381A19D63A0003F20F /* CartTable.h */,
 				0415F4391A19D63A0003F20F /* CartTable.m */,
+				322156BA1A1A76B00010C7CA /* WineTable.h */,
+				322156BB1A1A76B00010C7CA /* WineTable.m */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				04620F031A1205A200267EC2 /* WA_LoginViewController.m in Sources */,
 				0415F4431A19EC9E0003F20F /* ProgressHUDView.m in Sources */,
 				04620F3B1A1268D500267EC2 /* Wine.xcdatamodeld in Sources */,
+				322156BC1A1A76B00010C7CA /* WineTable.m in Sources */,
 				04620F321A1258AC00267EC2 /* Utility.m in Sources */,
 				04B335E21A1501650097B5DC /* WA_WineListViewController.m in Sources */,
 				04620F001A1205A200267EC2 /* FontUtility.m in Sources */,

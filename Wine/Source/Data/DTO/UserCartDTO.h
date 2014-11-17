@@ -15,7 +15,8 @@
 @property (nonatomic,retain)NSNumber *unitPrice;
 @property (nonatomic,retain)NSData * thumbImage;
 @property (nonatomic,retain)NSData * wineDetailsImage;
-
+@property (nonatomic,retain)NSNumber *wineId;
+@property (nonatomic,retain)NSNumber *wineQtyRemains;
 
 
 @end

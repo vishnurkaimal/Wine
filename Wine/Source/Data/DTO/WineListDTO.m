@@ -17,4 +17,5 @@
 @synthesize wineDetailImage;
 @synthesize wineQtyRemains;
 @synthesize unitPrice;
+@synthesize wineId;
 @end

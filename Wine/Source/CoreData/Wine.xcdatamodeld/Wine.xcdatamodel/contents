@@ -3,7 +3,9 @@
     <entity name="Cart" syncable="YES">
         <attribute name="unitPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="wineDetailImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="wineId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="wineName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wineQtyRemains" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="wineQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="wineThumbImage" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
@@ -12,8 +14,20 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Wine" syncable="YES">
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tastePalate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unitPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wineDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wineDetailImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="wineId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wineName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wineQtyRemains" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wineThumbImage" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Cart" positionX="-54" positionY="18" width="128" height="120"/>
-        <element name="User" positionX="7" positionY="-171" width="128" height="90"/>
+        <element name="Cart" positionX="-54" positionY="18" width="128" height="150"/>
+        <element name="User" positionX="7" positionY="-171" width="128" height="88"/>
+        <element name="Wine" positionX="-27" positionY="-27" width="128" height="178"/>
     </elements>
 </model>

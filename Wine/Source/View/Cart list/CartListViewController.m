@@ -16,6 +16,7 @@
 }
 
 @property (nonatomic,retain)IBOutlet UITableView *cartItemsTableview;
+@property (nonatomic,retain)IBOutlet UILabel *noItemsLabel;
 @property (nonatomic,retain)NSMutableArray *cartArray;
 @end
 
@@ -29,16 +30,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self arrangePage];
+    
     // Do any additional setup after loading the view.
 }
 
 -(void)arrangePage{
-    
+     self.title = @"Cart";
     UserCart *userCartRepo = [[UserCart alloc]init];
     self.cartArray = [userCartRepo fetchCartValuesFromTable];
-    
+    [self arrangetblView];
 }
 
+-(void)removefromCart:(UserCartDTO *)userDto{
+    
+    UserCart *cartRepo = [[UserCart alloc]init];
+    [cartRepo deleteAnItemfromCart:userDto];
+    [self arrangetblView];
+}
+-(void)arrangetblView{
+    self.cartItemsTableview.frame = CGRectMake(self.cartItemsTableview.frame.origin.x, self.cartItemsTableview.frame.origin.y, self.cartItemsTableview.frame.size.width, self.cartArray.count*CELL_HEIGHT);
+    if(self.cartArray.count >0){
+        self.noItemsLabel.hidden = YES;
+        self.cartItemsTableview.hidden = NO;
+        [self.cartItemsTableview reloadData];
+    }
+    else{
+        self.noItemsLabel.hidden = NO;
+        self.cartItemsTableview.hidden = YES;
+    }
+}
 
 #pragma mark - UitableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -75,14 +95,24 @@
     UserCartDTO *cartDto = [self.cartArray objectAtIndex:indexPath.row];
     cell.wineImageView.image = [UIImage imageWithData:cartDto.thumbImage];
     cell.wineName.text       = cartDto.name;
-    cell.winePrice.text      = [NSString stringWithFormat:@"$ %@",[cartDto.unitPrice stringValue]];
+    cell.winePrice.text      =[cartDto.unitPrice stringValue];
     cell.wineQty.text        = [cartDto.quantity stringValue];
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-   
-    
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        UserCartDTO *userDTO = [self.cartArray objectAtIndex:indexPath.row];
+        [self.cartArray objectAtIndex:indexPath.row];
+        [self removefromCart:userDTO];
+    }
 }
 
 

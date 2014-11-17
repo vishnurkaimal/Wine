@@ -103,8 +103,8 @@
         if([Utility checkForInternetConnection]){
           [self showProgressIndicator:@"Loading..."];
           UserLoginDTO *loginDto = [[UserLoginDTO alloc]init];
-          loginDto.email = _emailField.text;
-          loginDto.password = _passwordField.text;
+            loginDto.email = @"vishnu.kaimal@exp.com";//_emailField.text;
+          loginDto.password = @"vishnu";//_passwordField.text;
           UserRepository *userRepo = [[UserRepository alloc]init];
           [userRepo loginUser:loginDto WithResponseBlock:^(RegStatus regStatus , NSError *error){
           [self hideModalProgressIndicator];
@@ -126,7 +126,7 @@
            }];
         }
         else{
-            [self showAlertWithTitle:@"Whoops!" message:@"Mismatch in email and password"];
+            [self showAlertWithTitle:@"Whoops!" message:@"Pleaser check your internet connection"];
             return;
         }
     }
