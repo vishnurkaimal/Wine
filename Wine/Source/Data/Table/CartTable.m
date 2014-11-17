@@ -10,6 +10,6 @@
 
 @implementation CartTable
 
-@synthesize wineName,wineQuantity;
+@synthesize wineName,wineQuantity,unitPrice;
 
 @end

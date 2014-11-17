@@ -9,6 +9,6 @@
 #import "UserCartDTO.h"
 
 @implementation UserCartDTO
-@synthesize quantity,name;
+@synthesize quantity,name,unitPrice;
 
 @end

@@ -16,4 +16,5 @@
 @synthesize tastePalate;
 @synthesize wineDetailImage;
 @synthesize wineQtyRemains;
+@synthesize unitPrice;
 @end

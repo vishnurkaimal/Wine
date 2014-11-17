@@ -116,7 +116,9 @@
     UserCart    *userCart = [[UserCart alloc]init];
     UserCartDTO *cartDto  = [[UserCartDTO alloc]init];
     cartDto.quantity      = [NSNumber numberWithInt:[_quantityTextField.text intValue]];
+    cartDto.unitPrice     = [NSNumber numberWithInteger:self.wineListDTO.unitPrice];
     cartDto.name          = self.wineListDTO.winename;
+    
     [userCart saveUserDetails:cartDto];
 }
 

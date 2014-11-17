@@ -42,6 +42,7 @@
         wineListDto.score = [[pfObject objectForKey:@"wine_score"]integerValue];
         wineListDto.tastePalate = [pfObject objectForKey:@"wine_taste_palate"];
         wineListDto.score = [[pfObject objectForKey:@"wine_score"]integerValue];
+        wineListDto.unitPrice = [[pfObject objectForKey:@"wine_price"]integerValue];
        [newsArray addObject:wineListDto];
     }
     return newsArray;

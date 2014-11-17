@@ -31,6 +31,7 @@
     CartTable *cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:context];
         [cartObj setValue:userCartDto.name forKey:@"wineName"];
         [cartObj setValue:userCartDto.quantity forKey:@"wineQuantity"];
+         [cartObj setValue:userCartDto.unitPrice forKey:@"unitPrice"];
     
         if (![context save:&error]) {
             return NO;

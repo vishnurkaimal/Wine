@@ -16,4 +16,5 @@
 @property (nonatomic,retain)NSString    *tastePalate;
 @property (nonatomic,retain)NSData     *wineDetailImage;
 @property (nonatomic,assign)NSInteger   wineQtyRemains;
+@property (nonatomic,assign)NSInteger   unitPrice;
 @end
