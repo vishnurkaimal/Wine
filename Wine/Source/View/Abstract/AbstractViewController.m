@@ -7,7 +7,9 @@
 //
 
 #import "AbstractViewController.h"
+#import "Utility.h"
 
+#define SIGNOUT_ALERT_TAG 250
 @interface AbstractViewController ()
 
 @end
@@ -16,7 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+}
+-(void)showSignOutButton{
+    
+    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign out"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(signOutUser)];
+    self.navigationItem.rightBarButtonItem = signOutButton;
+    
+}
+-(void)showNavBar:(BOOL)isNavBar{
+    if(isNavBar){
+        self.navigationController.navigationBarHidden = NO;
+    }
+    else{
+        self.navigationController.navigationBarHidden = YES;
+    }
+    
 }
 
 
@@ -47,7 +68,28 @@
                                        options:0];
     return ageComponents.year;
 }
+#pragma mark - Button Action
 
+-(void)signOutUser{
+    
+    UIAlertView *signOutAlert = [[UIAlertView alloc]initWithTitle:@"" message:@"Are you sure want to Sign out" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    signOutAlert.tag = SIGNOUT_ALERT_TAG;
+    [signOutAlert show];
+    [Utility signOutUser];
+    
+}
+#pragma mark - UIlaertView Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == SIGNOUT_ALERT_TAG) {
+        if(buttonIndex == 1){
+          [Utility signOutUser];
+          [self .navigationController popToRootViewControllerAnimated:YES];
+        }
+    }
+}
+
+#pragma mark - memory warning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

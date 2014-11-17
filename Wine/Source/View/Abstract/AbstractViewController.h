@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AbstractViewController : UIViewController
+
+-(void)showSignOutButton;
+-(void)showNavBar:(BOOL)isNavBar;
 -(BOOL)isEmailValidation:(NSString *)strEmail;
 - (NSInteger)ageFromBirthday:(NSDate *)birthdate;
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)msg;

@@ -44,7 +44,7 @@
         [self navigateToWineListView];
     }
     else{
-    self.navigationController.navigationBarHidden = YES;
+    [self showNavBar:NO];
     [super viewWillAppear:YES];
     }
 }

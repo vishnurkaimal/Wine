@@ -21,6 +21,10 @@
     }
     return userStatus;
 }
++(void)signOutUser{
+    [Utility setValueInUserDefaults:@"0" forKey:USEREXISTS];
+    
+}
 +(BOOL) stringIsNotEmpty:(NSString *)string{
     BOOL status =  NO;
     if((string.length>0 && string!=nil))

@@ -33,8 +33,10 @@
 #pragma mark - Custome Methods
 -(void)arrangePage{
     self.title = @"Wine list";
+    [self showNavBar:YES];
     [self.navigationItem setHidesBackButton:YES animated:YES];
     wineListArray = [[NSMutableArray alloc]initWithObjects:@"Red",@"White",@"Bubbly",nil];
+    [self showSignOutButton];
    // [_tblView setFrame:CGRectMake(_tblView.frame.origin.x, _tblView.frame.origin.y, _tblView.frame.size.width,(CELL_WHEIGHT*([wineListArray count])))];
     if([Utility currentVersionGreaterOrEqualtoIOS7]){
         [_tblView setSeparatorInset:UIEdgeInsetsZero];

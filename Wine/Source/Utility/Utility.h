@@ -10,6 +10,7 @@
 
 @interface Utility : NSObject
 +(BOOL)isUserExits;
++(void)signOutUser;
 +(NSString *)trimTextField:(NSString*)textString;
 +(BOOL)currentVersionGreaterOrEqualtoIOS7;
 +(NSString *)convertDateToString:(NSDate *)date;

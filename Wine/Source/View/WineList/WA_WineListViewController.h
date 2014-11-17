@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WA_WineListViewController : UIViewController
+#import "AbstractViewController.h"
+@interface WA_WineListViewController : AbstractViewController
 
 @end

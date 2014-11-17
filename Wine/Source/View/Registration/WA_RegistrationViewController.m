@@ -33,7 +33,7 @@
 #pragma mark - View Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = NO;
+    [self showNavBar:YES];
     self.title = @"Registration";
     [self arrangeScreen];
     // Do any additional setup after loading the view.
