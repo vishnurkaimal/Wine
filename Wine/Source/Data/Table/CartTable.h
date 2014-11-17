@@ -15,4 +15,6 @@
 @property (nonatomic, retain) NSString * wineName;
 @property (nonatomic, retain) NSNumber * wineQuantity;
 @property (nonatomic,retain) NSNumber  *unitPrice;
+@property (nonatomic,retain)NSData *wineDetailImage;
+@property (nonatomic,retain)NSData *wineThumbImage;
 @end

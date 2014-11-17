@@ -118,7 +118,8 @@
     cartDto.quantity      = [NSNumber numberWithInt:[_quantityTextField.text intValue]];
     cartDto.unitPrice     = [NSNumber numberWithInteger:self.wineListDTO.unitPrice];
     cartDto.name          = self.wineListDTO.winename;
-    
+    cartDto.thumbImage    = self.wineListDTO.wineThumbImage;
+    cartDto.wineDetailsImage = self.wineListDTO.wineDetailImage;
     [userCart saveUserDetails:cartDto];
 }
 

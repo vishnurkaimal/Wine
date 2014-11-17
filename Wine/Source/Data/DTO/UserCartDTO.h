@@ -13,6 +13,8 @@
 @property (nonatomic,retain)NSNumber *quantity;
 @property (nonatomic,retain)NSString *name;
 @property (nonatomic,retain)NSNumber *unitPrice;
+@property (nonatomic,retain)NSData * thumbImage;
+@property (nonatomic,retain)NSData * wineDetailsImage;
 
 
 

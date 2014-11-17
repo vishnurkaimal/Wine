@@ -75,6 +75,8 @@
 		04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */; };
 		04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABD91A13B5790094DF38 /* WAFacebook.m */; };
 		04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABDD1A13B8750094DF38 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32F881FE1A1A446300D9B643 /* CartListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */; };
+		32F881FF1A1A446300D9B643 /* CartListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,9 @@
 		04BAABD91A13B5790094DF38 /* WAFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAFacebook.m; sourceTree = "<group>"; };
 		04BAABDC1A13B8750094DF38 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		04BAABDD1A13B8750094DF38 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		32F881FB1A1A446300D9B643 /* CartListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartListTableViewCell.h; sourceTree = "<group>"; };
+		32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartListTableViewCell.m; sourceTree = "<group>"; };
+		32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +377,9 @@
 		04620EF61A1205A200267EC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				32F881FB1A1A446300D9B643 /* CartListTableViewCell.h */,
+				32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */,
+				32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */,
 				0415F4561A1A274D0003F20F /* Cart list */,
 				0415F4591A1A274D0003F20F /* Wine details */,
 				04B335DF1A15014F0097B5DC /* WineList */,
@@ -615,6 +623,7 @@
 				04620F1F1A121CF900267EC2 /* facebook-login-button.png in Resources */,
 				04620EEA1A11EC1F00267EC2 /* Icon.png in Resources */,
 				04620F141A12150500267EC2 /* Login_user_name@2x.png in Resources */,
+				32F881FF1A1A446300D9B643 /* CartListTableViewCell.xib in Resources */,
 				04620F071A12081200267EC2 /* Login_transparent_bg.png in Resources */,
 				0415F4651A1A2E960003F20F /* DefaultImage.png in Resources */,
 				04620EB41A11E3A900267EC2 /* LaunchScreen.xib in Resources */,
@@ -679,6 +688,7 @@
 				04620F321A1258AC00267EC2 /* Utility.m in Sources */,
 				04B335E21A1501650097B5DC /* WA_WineListViewController.m in Sources */,
 				04620F001A1205A200267EC2 /* FontUtility.m in Sources */,
+				32F881FE1A1A446300D9B643 /* CartListTableViewCell.m in Sources */,
 				04620F441A126AB300267EC2 /* UserRepository.m in Sources */,
 				0415F45D1A1A274D0003F20F /* WA_WinedetailsViewController.m in Sources */,
 				0415F4631A1A29030003F20F /* UserCart.m in Sources */,

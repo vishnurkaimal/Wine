@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AbstractViewController.h"
 
-@interface CartListViewController : UIViewController
+@interface CartListViewController : AbstractViewController
 
 @end

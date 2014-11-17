@@ -14,6 +14,7 @@
 
 -(NSManagedObjectContext *)managedObjectContext;
 -(BOOL)saveUserDetails:(UserCartDTO *)userDto;
+-(NSMutableArray *)fetchCartValuesFromTable;
 
 
 @end
