@@ -154,10 +154,38 @@
                                               entityForName:@"Wine"inManagedObjectContext:context];
     [fetchRequest1 setEntity:entityDescription];
     NSArray *results = [context executeFetchRequest:fetchRequest1 error:&error];
-    WineTable *wintbl = [results objectAtIndex:[wineId integerValue]-1];
+    WineTable *wintbl = [results objectAtIndex:[wineId intValue] -1];
     wintbl.wineQtyRemains = qtyremains;
     if (![context save:&error]) {
         NSLog(@"Failed to save - error: %@", [error localizedDescription]);
     }
+}
+
+-(void)getRemainingWineQuantityFromServer:(NSNumber *)wineId andQuantity:(NSNumber *)wineQuantity {
+    NSMutableArray *userDetailsArray = [[NSMutableArray alloc]init];
+    PFQuery *query = [PFQuery queryWithClassName:@"Wine_Details"];
+    [query whereKey:@"wine_id" equalTo:wineId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+          NSString *objectID;
+            PFObject *object;
+            for (object in objects) {
+                objectID = [object objectId];
+                [userDetailsArray addObject:object];
+            }
+            NSNumber *totalQuantity = [[userDetailsArray objectAtIndex:0]objectForKey:@"wine_qty_remains"];//[object objectForKey:@"wine_qty_remains"];
+     
+            int remainigQuantity = [totalQuantity intValue] - [wineQuantity intValue];
+            [self updateQuantityRemainsToServer:objectID withQuantity:[NSNumber numberWithInt:remainigQuantity]];
+        }
+    }];
+}
+
+-(void)updateQuantityRemainsToServer:(NSString *)objectID withQuantity:(NSNumber *)remainingQuantity {
+    
+    PFObject *detailsObject = [PFObject objectWithoutDataWithClassName:@"Wine_Details" objectId:objectID];
+    [detailsObject setObject:remainingQuantity forKey:@"wine_qty_remains"];
+    [detailsObject save];
+    
 }
 @end

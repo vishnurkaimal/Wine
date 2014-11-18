@@ -49,7 +49,7 @@
 }
 -(void)arrangetblView{
     self.cartItemsTableview.frame = CGRectMake(self.cartItemsTableview.frame.origin.x, self.cartItemsTableview.frame.origin.y, self.cartItemsTableview.frame.size.width, self.cartArray.count*CELL_HEIGHT);
-    if(self.cartArray.count >0){
+    if(self.cartArray.count > 0){
         self.noItemsLabel.hidden = YES;
         self.cartItemsTableview.hidden = NO;
         [self.cartItemsTableview reloadData];
@@ -95,8 +95,9 @@
     UserCartDTO *cartDto = [self.cartArray objectAtIndex:indexPath.row];
     cell.wineImageView.image = [UIImage imageWithData:cartDto.thumbImage];
     cell.wineName.text       = cartDto.name;
-    cell.winePrice.text      =[cartDto.unitPrice stringValue];
+    cell.winePrice.text      = [NSString stringWithFormat:@"$%@",[cartDto.unitPrice stringValue]];
     cell.wineQty.text        = [cartDto.quantity stringValue];
+    
     return cell;
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,7 +109,11 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView deleteRowsAtIndexPaths: @[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+        
+  
+        
         UserCartDTO *userDTO = [self.cartArray objectAtIndex:indexPath.row];
         [self.cartArray objectAtIndex:indexPath.row];
         [self removefromCart:userDTO];

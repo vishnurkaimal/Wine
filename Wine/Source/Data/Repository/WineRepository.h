@@ -19,4 +19,5 @@ enum WineStatus : NSInteger {
 }
 -(void)updateQtyremains:(NSNumber*)qtyremains andId:(NSNumber *)wineId;
 -(void)getWineStatusWithResponseBlock:(void (^)(NSMutableArray *,WineStatus))responseValue;
+-(void)getRemainingWineQuantityFromServer:(NSNumber *)wineId andQuantity:(NSNumber *)wineQuantity;
 @end

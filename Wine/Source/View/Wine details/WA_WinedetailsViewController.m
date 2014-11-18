@@ -137,7 +137,9 @@
     cartDto.wineQtyRemains = [NSNumber numberWithInteger:wineRemain];
     [userCart saveUserDetails:cartDto];
     WineRepository *wineRepo = [[WineRepository alloc]init];
-    [wineRepo updateQtyremains:cartDto.wineQtyRemains andId:cartDto.wineId];
+   // [wineRepo updateQtyremains:cartDto.wineQtyRemains andId:cartDto.wineId];
+        
+    [wineRepo getRemainingWineQuantityFromServer:cartDto.wineId andQuantity:cartDto.quantity];
     [self navigateToCartpage];
   }
 }

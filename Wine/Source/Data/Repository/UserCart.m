@@ -35,6 +35,7 @@
         [cartObj setValue:userCartDto.thumbImage forKey:@"wineThumbImage"];
         [cartObj setValue:userCartDto.wineDetailsImage forKey:@"wineDetailImage"];
         [cartObj setValue:userCartDto.wineId  forKey:@"wineId"];
+        [cartObj setValue:userCartDto.wineQtyRemains forKey:@"wineQtyRemains"];
         if (![context save:&error]) {
             return NO;
         }
@@ -44,7 +45,6 @@
     
     return YES;
 }
-
 
 
 -(NSMutableArray *)fetchCartValuesFromTable{
@@ -84,6 +84,8 @@
     [managedObjectContext save:&error];
     
 }
+
+
 
 
 @end
