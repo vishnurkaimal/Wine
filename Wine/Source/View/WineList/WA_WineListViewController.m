@@ -43,7 +43,7 @@
     [self.navigationItem setHidesBackButton:YES animated:YES];
    // wineListArray = [[NSMutableArray alloc]initWithObjects:@"Red",@"White",@"Bubbly",nil];
    [self showSignOutButton];
-   // [_tblView setFrame:CGRectMake(_tblView.frame.origin.x, _tblView.frame.origin.y, _tblView.frame.size.width,(CELL_WHEIGHT*([wineListArray count])))];
+   
     if([Utility currentVersionGreaterOrEqualtoIOS7]){
         [_tblView setSeparatorInset:UIEdgeInsetsZero];
     }
@@ -56,6 +56,7 @@
             switch (wineStatus) {
                 case wineStatus_Success:
                     wineListArray = wineDetailsArray;
+                     [_tblView setFrame:CGRectMake(_tblView.frame.origin.x, _tblView.frame.origin.y, _tblView.frame.size.width,(CELL_WHEIGHT*([wineListArray count])))];
                     _tblView.hidden = NO;
                     _noWineLabel.hidden = YES;
                     [_tblView reloadData];
@@ -110,7 +111,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    cell.backgroundColor = UIColorFromRGB(0xD8A848);
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.font = [FontUtility fontForFontTypeEnum:FMediumLightCopy];
     WineListDTO *wineListDTO = [wineListArray objectAtIndex:indexPath.row];
     cell.textLabel.text = wineListDTO.winename;

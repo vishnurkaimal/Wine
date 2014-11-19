@@ -8,7 +8,7 @@
 
 #import "UserCart.h"
 #import "CartTable.h"
-
+#import "UserCartDTO.h"
 #import <UIKit/UIKit.h>
 #define ENTITY_USER @"User"
 

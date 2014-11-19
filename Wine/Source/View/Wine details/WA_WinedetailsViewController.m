@@ -139,8 +139,13 @@
     WineRepository *wineRepo = [[WineRepository alloc]init];
    // [wineRepo updateQtyremains:cartDto.wineQtyRemains andId:cartDto.wineId];
         
-    [wineRepo getRemainingWineQuantityFromServer:cartDto.wineId andQuantity:cartDto.quantity];
-    [self navigateToCartpage];
+        [wineRepo getRemainingWineQuantityFromServer:cartDto.wineId andQuantity:cartDto.quantity isSubstract:YES WithResponseBlock:^(WineStatus wineStatus){
+            if (wineStatus == wineStatus_Success) {
+                [self navigateToCartpage];
+            }
+          
+     }];
+   
   }
 }
 

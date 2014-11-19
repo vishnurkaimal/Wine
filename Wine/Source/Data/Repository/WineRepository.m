@@ -8,6 +8,7 @@
 
 #import "WineRepository.h"
 #import "WineListDTO.h"
+#import "UserCartDTO.h"
 #import "WineTable.h"
 #import <Parse/Parse.h>
 #import <CoreData/CoreData.h>
@@ -161,7 +162,8 @@
     }
 }
 
--(void)getRemainingWineQuantityFromServer:(NSNumber *)wineId andQuantity:(NSNumber *)wineQuantity {
+
+-(void)getRemainingWineQuantityFromServer:(NSNumber *)wineId andQuantity:(NSNumber *)wineQuantity isSubstract:(BOOL)isSubstract WithResponseBlock:(void (^)(WineStatus))responseValue{
     NSMutableArray *userDetailsArray = [[NSMutableArray alloc]init];
     PFQuery *query = [PFQuery queryWithClassName:@"Wine_Details"];
     [query whereKey:@"wine_id" equalTo:wineId];
@@ -174,9 +176,15 @@
                 [userDetailsArray addObject:object];
             }
             NSNumber *totalQuantity = [[userDetailsArray objectAtIndex:0]objectForKey:@"wine_qty_remains"];//[object objectForKey:@"wine_qty_remains"];
-     
-            int remainigQuantity = [totalQuantity intValue] - [wineQuantity intValue];
+            int remainigQuantity;
+            if(isSubstract){
+              remainigQuantity = [totalQuantity intValue] - [wineQuantity intValue];
+            }
+            else{
+                 remainigQuantity = [totalQuantity intValue] + [wineQuantity intValue];
+            }
             [self updateQuantityRemainsToServer:objectID withQuantity:[NSNumber numberWithInt:remainigQuantity]];
+            responseValue (wineStatus_Success);
         }
     }];
 }
@@ -188,4 +196,7 @@
     [detailsObject save];
     
 }
+
+
+
 @end

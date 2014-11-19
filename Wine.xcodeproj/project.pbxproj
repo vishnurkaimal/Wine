@@ -75,6 +75,9 @@
 		04BAABD61A13B4FE0094DF38 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BAABD51A13B4FE0094DF38 /* FacebookSDK.framework */; };
 		04BAABDA1A13B5790094DF38 /* WAFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABD91A13B5790094DF38 /* WAFacebook.m */; };
 		04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BAABDD1A13B8750094DF38 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		04EE37A31A1BB33A00839808 /* cart_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EE37A21A1BB33A00839808 /* cart_image.png */; };
+		04EE37AB1A1BC25300839808 /* RWCheckoutDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE37A81A1BC25300839808 /* RWCheckoutDisplayCell.m */; };
+		04EE37AC1A1BC25300839808 /* RWCheckoutInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE37AA1A1BC25300839808 /* RWCheckoutInputCell.m */; };
 		322156BC1A1A76B00010C7CA /* WineTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 322156BB1A1A76B00010C7CA /* WineTable.m */; };
 		32F881FE1A1A446300D9B643 /* CartListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */; };
 		32F881FF1A1A446300D9B643 /* CartListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */; };
@@ -185,6 +188,11 @@
 		04BAABD91A13B5790094DF38 /* WAFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAFacebook.m; sourceTree = "<group>"; };
 		04BAABDC1A13B8750094DF38 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		04BAABDD1A13B8750094DF38 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		04EE37A21A1BB33A00839808 /* cart_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart_image.png; sourceTree = "<group>"; };
+		04EE37A71A1BC25300839808 /* RWCheckoutDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCheckoutDisplayCell.h; sourceTree = "<group>"; };
+		04EE37A81A1BC25300839808 /* RWCheckoutDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCheckoutDisplayCell.m; sourceTree = "<group>"; };
+		04EE37A91A1BC25300839808 /* RWCheckoutInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWCheckoutInputCell.h; sourceTree = "<group>"; };
+		04EE37AA1A1BC25300839808 /* RWCheckoutInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCheckoutInputCell.m; sourceTree = "<group>"; };
 		322156BA1A1A76B00010C7CA /* WineTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineTable.h; sourceTree = "<group>"; };
 		322156BB1A1A76B00010C7CA /* WineTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineTable.m; sourceTree = "<group>"; };
 		32F881FB1A1A446300D9B643 /* CartListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartListTableViewCell.h; sourceTree = "<group>"; };
@@ -380,6 +388,10 @@
 		04620EF61A1205A200267EC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04EE37A71A1BC25300839808 /* RWCheckoutDisplayCell.h */,
+				04EE37A81A1BC25300839808 /* RWCheckoutDisplayCell.m */,
+				04EE37A91A1BC25300839808 /* RWCheckoutInputCell.h */,
+				04EE37AA1A1BC25300839808 /* RWCheckoutInputCell.m */,
 				32F881FB1A1A446300D9B643 /* CartListTableViewCell.h */,
 				32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */,
 				32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */,
@@ -510,6 +522,7 @@
 		04B734CC1A15B30200155E04 /* Wine images */ = {
 			isa = PBXGroup;
 			children = (
+				04EE37A21A1BB33A00839808 /* cart_image.png */,
 				04B734CD1A15B30E00155E04 /* category1.png */,
 				04B734CE1A15B30E00155E04 /* category1@2x.png */,
 				04B734CF1A15B30E00155E04 /* category2.png */,
@@ -631,6 +644,7 @@
 				32F881FF1A1A446300D9B643 /* CartListTableViewCell.xib in Resources */,
 				04620F071A12081200267EC2 /* Login_transparent_bg.png in Resources */,
 				0415F4651A1A2E960003F20F /* DefaultImage.png in Resources */,
+				04EE37A31A1BB33A00839808 /* cart_image.png in Resources */,
 				04620EB41A11E3A900267EC2 /* LaunchScreen.xib in Resources */,
 				04620EE91A11EC1F00267EC2 /* Default@3x.png in Resources */,
 				04620F151A12150500267EC2 /* Login_user_name@3x.png in Resources */,
@@ -675,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BAABDE1A13B8750094DF38 /* Reachability.m in Sources */,
+				04EE37AB1A1BC25300839808 /* RWCheckoutDisplayCell.m in Sources */,
 				04620F021A1205A200267EC2 /* AppDelegate.m in Sources */,
 				04620F481A126AEA00267EC2 /* UserTable.m in Sources */,
 				04620EA61A11E3A900267EC2 /* main.m in Sources */,
@@ -687,6 +702,7 @@
 				0415F4601A1A27B70003F20F /* UserCartDTO.m in Sources */,
 				0415F43A1A19D63A0003F20F /* CartTable.m in Sources */,
 				0415F4461A1A0F650003F20F /* WineRepository.m in Sources */,
+				04EE37AC1A1BC25300839808 /* RWCheckoutInputCell.m in Sources */,
 				04620F031A1205A200267EC2 /* WA_LoginViewController.m in Sources */,
 				0415F4431A19EC9E0003F20F /* ProgressHUDView.m in Sources */,
 				04620F3B1A1268D500267EC2 /* Wine.xcdatamodeld in Sources */,
@@ -832,7 +848,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "830cd0b4-2d27-41f0-86a8-d59b28a04408";
+				PROVISIONING_PROFILE = "6b976dd0-a928-4621-8f2c-556144649c7d";
 			};
 			name = Debug;
 		};
@@ -852,7 +868,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "830cd0b4-2d27-41f0-86a8-d59b28a04408";
+				PROVISIONING_PROFILE = "6b976dd0-a928-4621-8f2c-556144649c7d";
 			};
 			name = Release;
 		};

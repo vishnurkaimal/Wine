@@ -10,6 +10,7 @@
 #import "CartListTableViewCell.h"
 #import "UserCartDTO.h"
 #import "UserCart.h"
+#import  "WineRepository.h"
 
 @interface CartListViewController (){
     
@@ -17,6 +18,7 @@
 
 @property (nonatomic,retain)IBOutlet UITableView *cartItemsTableview;
 @property (nonatomic,retain)IBOutlet UILabel *noItemsLabel;
+@property (nonatomic,retain)IBOutlet UILabel *totalPrice;
 @property (nonatomic,retain)NSMutableArray *cartArray;
 @end
 
@@ -39,8 +41,17 @@
     UserCart *userCartRepo = [[UserCart alloc]init];
     self.cartArray = [userCartRepo fetchCartValuesFromTable];
     [self arrangetblView];
+    [self addBackBarButton];
 }
-
+- (void)addBackBarButton{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 55, 35);
+    [button setTitle:@"< back" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = customBarItem;
+}
 -(void)removefromCart:(UserCartDTO *)userDto{
     
     UserCart *cartRepo = [[UserCart alloc]init];
@@ -58,9 +69,31 @@
         self.noItemsLabel.hidden = NO;
         self.cartItemsTableview.hidden = YES;
     }
+    [self calculateTotalprice];
 }
 
-#pragma mark - UitableView
+-(void)calculateTotalprice{
+    int totalPrice = 0;
+    for (UserCartDTO *cartDto in self.cartArray) {
+        totalPrice = totalPrice + [cartDto.unitPrice intValue];
+    }
+    self.totalPrice.text = [NSString stringWithFormat:@"Total price: $    %d",totalPrice];
+}
+#pragma mark - button Actions
+- (void)backButtonClicked :(id)sender{
+    WineRepository *wineRepo = [[WineRepository alloc]init];
+    for (UserCartDTO *userCartDto in self.cartArray) {
+        [wineRepo getRemainingWineQuantityFromServer:userCartDto.wineId andQuantity:userCartDto.quantity isSubstract:NO WithResponseBlock:^(WineStatus wineStatus){
+            if (wineStatus == wineStatus_Success) {
+                //[self navigateToCartpage];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            
+        }];
+    }
+    
+}
+#pragma mark - UItableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -95,7 +128,7 @@
     UserCartDTO *cartDto = [self.cartArray objectAtIndex:indexPath.row];
     cell.wineImageView.image = [UIImage imageWithData:cartDto.thumbImage];
     cell.wineName.text       = cartDto.name;
-    cell.winePrice.text      = [NSString stringWithFormat:@"$%@",[cartDto.unitPrice stringValue]];
+    cell.winePrice.text      = [NSString stringWithFormat:@"$ %@",[cartDto.unitPrice stringValue]];
     cell.wineQty.text        = [cartDto.quantity stringValue];
     
     return cell;
@@ -111,9 +144,6 @@
         
         [tableView deleteRowsAtIndexPaths: @[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
-        
-  
-        
         UserCartDTO *userDTO = [self.cartArray objectAtIndex:indexPath.row];
         [self.cartArray objectAtIndex:indexPath.row];
         [self removefromCart:userDTO];
