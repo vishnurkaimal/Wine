@@ -79,6 +79,7 @@
 		04EE37AB1A1BC25300839808 /* RWCheckoutDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE37A81A1BC25300839808 /* RWCheckoutDisplayCell.m */; };
 		04EE37AC1A1BC25300839808 /* RWCheckoutInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE37AA1A1BC25300839808 /* RWCheckoutInputCell.m */; };
 		322156BC1A1A76B00010C7CA /* WineTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 322156BB1A1A76B00010C7CA /* WineTable.m */; };
+		327AC9E81A1C6362001190BC /* home_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 327AC9E71A1C6362001190BC /* home_yellow.png */; };
 		32F881FE1A1A446300D9B643 /* CartListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */; };
 		32F881FF1A1A446300D9B643 /* CartListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -195,6 +196,7 @@
 		04EE37AA1A1BC25300839808 /* RWCheckoutInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWCheckoutInputCell.m; sourceTree = "<group>"; };
 		322156BA1A1A76B00010C7CA /* WineTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineTable.h; sourceTree = "<group>"; };
 		322156BB1A1A76B00010C7CA /* WineTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineTable.m; sourceTree = "<group>"; };
+		327AC9E71A1C6362001190BC /* home_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_yellow.png; sourceTree = "<group>"; };
 		32F881FB1A1A446300D9B643 /* CartListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartListTableViewCell.h; sourceTree = "<group>"; };
 		32F881FC1A1A446300D9B643 /* CartListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartListTableViewCell.m; sourceTree = "<group>"; };
 		32F881FD1A1A446300D9B643 /* CartListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartListTableViewCell.xib; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				0415F4641A1A2E960003F20F /* DefaultImage.png */,
 				04B734CC1A15B30200155E04 /* Wine images */,
 				04620F1C1A121CF900267EC2 /* facebook-login-button.png */,
+				327AC9E71A1C6362001190BC /* home_yellow.png */,
 				04620F1D1A121CF900267EC2 /* facebook-login-button@2x.png */,
 				04620F1E1A121CF900267EC2 /* facebook-login-button@3x.png */,
 				04620F161A1215DB00267EC2 /* Login_password.png */,
@@ -668,6 +671,7 @@
 				04620F1A1A1215DB00267EC2 /* Login_password@2x.png in Resources */,
 				04620EED1A11EC1F00267EC2 /* Icon@3x.png in Resources */,
 				04B734D81A15B30E00155E04 /* category3@2x.png in Resources */,
+				327AC9E81A1C6362001190BC /* home_yellow.png in Resources */,
 				04B734D61A15B30E00155E04 /* category2@2x.png in Resources */,
 				04620F201A121CF900267EC2 /* facebook-login-button@2x.png in Resources */,
 				04620EE41A11EC1F00267EC2 /* Default-568h@2x.png in Resources */,
@@ -848,7 +852,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6b976dd0-a928-4621-8f2c-556144649c7d";
+				PROVISIONING_PROFILE = "830cd0b4-2d27-41f0-86a8-d59b28a04408";
 			};
 			name = Debug;
 		};
@@ -868,7 +872,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6b976dd0-a928-4621-8f2c-556144649c7d";
+				PROVISIONING_PROFILE = "830cd0b4-2d27-41f0-86a8-d59b28a04408";
 			};
 			name = Release;
 		};

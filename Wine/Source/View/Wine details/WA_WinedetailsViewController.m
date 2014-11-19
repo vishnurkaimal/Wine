@@ -77,6 +77,7 @@
         self.quantityTextField.hidden = NO;
         self.quantityHeaderLabel.text = @"Select quantity";
         quantityArray = [[NSMutableArray alloc]init];
+        NSLog(@"self.wineListDTO.wineQtyRemains::%d",self.wineListDTO.wineQtyRemains);
          for (int i = 1; i <= self.wineListDTO.wineQtyRemains; i++) {
             [quantityArray addObject:[NSNumber numberWithInt:i]];
          }

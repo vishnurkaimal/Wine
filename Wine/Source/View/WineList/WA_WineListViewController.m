@@ -29,10 +29,13 @@
 #pragma mark - ViewCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self arrangePage];
+    
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self arrangePage];
+}
 
 #pragma mark - Custome Methods
 -(void)arrangePage{
@@ -112,7 +115,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.font = [FontUtility fontForFontTypeEnum:FMediumLightCopy];
+    cell.textLabel.font = [FontUtility fontForFontTypeEnum:FStandardBoldCopy];
+    cell.textLabel.textColor = [UIColor whiteColor];
     WineListDTO *wineListDTO = [wineListArray objectAtIndex:indexPath.row];
     cell.textLabel.text = wineListDTO.winename;
     if(wineListDTO.wineThumbImage == nil)

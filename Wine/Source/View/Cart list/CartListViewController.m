@@ -7,6 +7,7 @@
 //
 
 #import "CartListViewController.h"
+#import "WA_WineListViewController.h"
 #import "CartListTableViewCell.h"
 #import "UserCartDTO.h"
 #import "UserCart.h"
@@ -31,9 +32,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self arrangePage];
-    
+     
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self arrangePage];
 }
 
 -(void)arrangePage{
@@ -41,16 +45,19 @@
     UserCart *userCartRepo = [[UserCart alloc]init];
     self.cartArray = [userCartRepo fetchCartValuesFromTable];
     [self arrangetblView];
-    [self addBackBarButton];
+    [self addHomeButton];
 }
-- (void)addBackBarButton{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 55, 35);
-    [button setTitle:@"< back" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+- (void)addHomeButton{
+    
+    UIImage *homeImage = [UIImage imageNamed:@"home_yellow.png"];
+    UIButton *homeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [homeButton addTarget:self action:@selector(homeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [homeButton setImage:homeImage forState:UIControlStateNormal];
+    homeButton.frame = CGRectMake(200.0, 0.0, 30, 30);
+    
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:homeButton];
     self.navigationItem.leftBarButtonItem = customBarItem;
+    
 }
 -(void)removefromCart:(UserCartDTO *)userDto{
     
@@ -75,9 +82,9 @@
 -(void)calculateTotalprice{
     int totalPrice = 0;
     for (UserCartDTO *cartDto in self.cartArray) {
-        totalPrice = totalPrice + [cartDto.unitPrice intValue];
+        totalPrice = totalPrice + ([cartDto.unitPrice intValue]*[cartDto.quantity intValue]);
     }
-    self.totalPrice.text = [NSString stringWithFormat:@"Total price: $    %d",totalPrice];
+    self.totalPrice.text = [NSString stringWithFormat:@"Total price: $ %d",totalPrice];
 }
 #pragma mark - button Actions
 - (void)backButtonClicked :(id)sender{
@@ -92,6 +99,12 @@
         }];
     }
     
+}
+
+- (void)homeButtonClicked :(id)sender{
+
+    WA_WineListViewController *wineListView = (WA_WineListViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WA_WineListViewController"];
+    [self.navigationController pushViewController:wineListView animated:YES];
 }
 #pragma mark - UItableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
